@@ -53,8 +53,8 @@ function draw() {
   
   //code to reset the background
 
-    if(path.x < width / 2 - 100){
-      pathImg.x = pathImg.width / 2;
+    if(path.y > height - 100){
+      path.y = height / 2;
     }
 
     createCash();
@@ -107,7 +107,7 @@ function draw() {
 function createCash() {
   if (World.frameCount % 200 == 0) {
    // Modify the positions of cash 
-    var cash = createSprite(Math.round(random(50, height - 300),40, 10, 10));
+    var cash = createSprite(Math.round(random(50, width - 60),40, 10, 10));
     cash.addImage(cashImg);
   cash.scale=0.12;
   cash.velocityY = 5;
@@ -120,7 +120,7 @@ function createDiamonds() {
   if (World.frameCount % 320 == 0) {
        // Modify the positions of diamonds 
 
-    var diamonds = createSprite(Math.round(random(50, height - 60),40, 10, 10));
+    var diamonds = createSprite(Math.round(random(50, width - 60),40, 10, 10));
     diamonds.addImage(diamondsImg);
   diamonds.scale=0.03;
   diamonds.velocityY = 5;
@@ -133,7 +133,7 @@ function createJwellery() {
   if (World.frameCount % 410 == 0) {
     //   Modify the positions of jwellery to make them spawn throughout the available screen size.
 
-    var jwellery = createSprite(Math.round(random(50, height - 60),40, 10, 10));
+    var jwellery = createSprite(Math.round(random(50, width - 60),40, 10, 10));
     jwellery.addImage(jwelleryImg);
   jwellery.scale=0.13;
   jwellery.velocityY = 5;
@@ -146,7 +146,7 @@ function createSword(){
   if (World.frameCount % 530 == 0) {
     //   Modify the positions of sword to make them spawn throughout the available screen size.
 
-    var sword = createSprite(Math.round(random(50, height - 300),40, 10, 10));
+    var sword = createSprite(Math.round(random(50, width - 300),40, 10, 10));
     sword.addImage(swordImg);
   sword.scale=0.1;
   sword.velocityY = 4;
